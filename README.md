@@ -1,6 +1,5 @@
 # USC_Cover_Page_Tool
 Simple Cover Page Creation Tool
-The independent executable download can be also be found here: https://archive.org/details/usc-cover-page-tool
 
 
 The entire program is just a single python file - "USC Cover Page Tool.py". 
