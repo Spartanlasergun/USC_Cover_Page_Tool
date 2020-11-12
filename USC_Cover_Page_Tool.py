@@ -17,7 +17,6 @@ root.title("USC Cover Page Tool")
 root.geometry('800x600')
 root.resizable(0, 0)
 
-
 Coverpg_Options = tkinter.Label(root, text="Cover Page Options").place(x=125, y=10)
 
 #Checkboxes for Heading One or Heading Two
@@ -149,6 +148,11 @@ def cover_page():
     preview.update()
     document = Document()
 
+    #Set Document Author
+    core_properties = document.core_properties
+    core_properties.author = str(student_name.get())
+    core_properties.comments = "University of the Southern Caribbean"
+
     #Set Margins
     sections = document.sections
     for section in sections:
@@ -248,42 +252,42 @@ def cover_page():
         location = savar.get()
         homepath = (os.environ['HOMEPATH'])
         if location == "Desktop":
-            Desktop = homepath + ("/Desktop") + "/" + doc_title + ".docx"
+            Desktop = homepath + ("/Desktop") + "/" + doc_title
             if path.exists(homepath + ("/Desktop")):
                 shutil.move(cur_location, Desktop)
             else:
                 preview.create_text(215, 320, text="Could not locate Desktop\nFile stored in current directory")
                 preview.update()
         elif location == "Downloads":
-            Downloads = homepath + ("/Downloads") + "/" + doc_title + ".docx"
+            Downloads = homepath + ("/Downloads") + "/" + doc_title
             if path.exists(homepath + ("/Downloads")):
                 shutil.move(cur_location, Downloads)
             else:
                 preview.create_text(215, 320, text="Could not locate Downloads\nFile stored in current directory")
                 preview.update()
         elif location == "Videos":
-            Videos = homepath + ("/Videos") + "/" + doc_title + ".docx"
+            Videos = homepath + ("/Videos") + "/" + doc_title
             if path.exists(homepath + ("/Videos")):
                 shutil.move(cur_location, Videos)
             else:
                 preview.create_text(215, 320, text="Could not locate Videos\nFile stored in current directory")
                 preview.update()
         elif location == "Music":
-            Music = homepath + ("/Music") + "/" + doc_title + ".docx"
+            Music = homepath + ("/Music") + "/" + doc_title
             if path.exists(homepath + ("/Music")):
                 shutil.move(cur_location, Music)
             else:
                 preview.create_text(215, 320, text="Could not locate Music\nFile stored in current directory")
                 preview.update()
         elif location == "Documents":
-            Documents = homepath + ("/Documents") + "/" + doc_title + ".docx"
+            Documents = homepath + ("/Documents") + "/" + doc_title
             if path.exists(homepath + ("/Documents")):
                 shutil.move(cur_location, Documents)
             else:
                 preview.create_text(215, 320, text="Could not locate Documents\nFile stored in current directory")
                 preview.update()
         elif location == "Pictures":
-            Pictures = homepath + ("/Pictures") + "/" + doc_title + ".docx"
+            Pictures = homepath + ("/Pictures") + "/" + doc_title
             if path.exists(homepath + ("/Pictures")):
                 shutil.move(cur_location, Pictures)
             else:
